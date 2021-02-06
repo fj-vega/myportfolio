@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Archivo+Narrow|Julius+Sans+One&display=swap);
+
+$font-heading: 'Julius Sans One', sans-serif;
+$font-body: 'Archivo Narrow', sans-serif;
+
+html {
+  font-size: 10px;
+
+  @include responsive(md) {
+    font-size: 11px;
+  }
+
+  @include responsive(lg) {
+    font-size: 12px;
+  }
+}
+
+* {
+  font-family: $font-body;
+  font-size: 1.2rem;
+  color: $color-theme-grey;
+}
+
+a:link,
+a:visited,
+a:active {
+  color: $color-theme-grey;
+
+  & > * {
+    color: $color-theme-grey;
+  }
+}
+
+a:hover {
+  color: $color-theme-main;
+
+  & > * {
+    color: $color-theme-main;
+  }
+}
+
+.header {
+  .first-name {
+    font-family: $font-heading;
+    font-size: 6rem;
+    color: $color-theme-main;
+    font-weight: 200;
+
+    @include responsive(md) {
+      font-size: 10rem;
+    }
+  }
+  
+  .last-name {
+    font-family: $font-heading;
+    font-size: 3.2rem;
+    color: $color-theme-white;
+    letter-spacing: 4px;
+    font-weight: 200;
+
+    @include responsive(md) {
+      font-size: 6rem;
+    }
+  }    
+  
+  .position {
+    color: $color-theme-main;
+    font-size: 2.8rem;
+    margin-top: 1rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+  }
+
+  .navbar__link {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+}
+
+.section {
+  .section-title {
+    font-family: $font-heading;
+    font-size: 2rem;
+    color: $color-theme-white;
+    letter-spacing: 1.6px;
+    margin-right: -1.6px;
+    text-align: center;
+
+    @include responsive(md) {
+      font-size: 2.6rem;
+    }
+  }
+  
+  .colored-title {
+    font-family: $font-heading;
+    font-size: 2rem;
+    color: $color-theme-main;
+    letter-spacing: 1.6px;
+    margin-right: -1.6px;
+
+    @include responsive(md) {
+      font-size: 2.6rem;
+    }
+  }
+  
+  .section-text {
+    color: $color-theme-grey;
+    letter-spacing: 1.3px;
+    font-size: 1.5rem;
+  }
+}
+
+.gallery__item {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-form {
+  &__label {
+    color: #333;
+    font-size: 1.5rem;
+    letter-spacing: 1.2px;
+  }
+
+  &__input {
+    color: #444;
+    font-size: 1.5rem;
+    letter-spacing: 1.2px;
+
+    &::placeholder {
+      color: $color-theme-grey;
+    }
+  }
+
+  &__submit {
+    color: $color-theme-grey;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $color-theme-main;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.section {
+  padding: 5rem 0;
+
+  @include responsive(md) {
+    padding: 12rem 0;
+  }
+
+  .section-title {
+    margin-bottom: 3rem;
+  }
+
+  .section-text {
+    text-align: justify;
+    margin-bottom: 1rem;
+  }
+}
+
+.section-content {
+  padding: 20px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+// ! Scroll/onload animation
+// .section {
+//   opacity: 0;
+//   // transform: translate3d(0, 50px, 0);
+//   transition: all 0.5s ease-out;
+// }
+
+
+// .active {
+//   opacity: 1;
+//   // transform: translate3d(0, 0, 0);
+// }

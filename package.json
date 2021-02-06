@@ -1,0 +1,23 @@
+{
+  "name": "fj",
+  "version": "1.0.0",
+  "description": "FJ - Web Designer Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass-watch": "sass --watch sass/main.scss dist/css/style.css",
+    "sass-build": "sass sass/main.scss dist/css/style.comp.css",
+    "css-prefix": "postcss --use autoprefixer -b \"last 10 versions\" dist/css/style.comp.css -o dist/css/style.css",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "FJ",
+  "license": "ISC",
+  "homepage": "https://fj-vega.github.io/myportfolio",
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "postcss-cli": "^6.1.2",
+    "sass": "^1.32.6"
+  },
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}

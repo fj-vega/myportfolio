@@ -1,0 +1,55 @@
+html {
+  // background-color: $color-theme-dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #333;
+  
+  // Needed for the header animation
+  min-height: 100vh;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+li { list-style: none; }
+
+a:link,
+a:visited,
+a:active { 
+  text-decoration: none; 
+  outline: 0;
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-out;
+
+  & > * {
+    transition: all 0.2s ease-out;
+  }
+}
+
+a:hover {
+  border-color: $color-theme-main;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+button::-moz-focus-inner {
+  border:0;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}

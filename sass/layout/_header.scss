@@ -1,0 +1,109 @@
+.header {
+  background-image: 
+    linear-gradient(
+      to right bottom, 
+      rgba(#fff, 0.15),
+      rgba(#fff, 0.15)
+    ),
+    url('../assets/images/wood_desk_3.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 6rem 0;
+
+  @include responsive(md) {
+    padding: 14rem 0;
+    background-attachment: fixed;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .position {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 3;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  opacity: 1; // originally set to 0 to trigger animation
+  transition: all 0.2s ease-out;
+
+  // ! Animations temporary disabled
+  // &.show { opacity: 1; } 
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: $color-theme-white;
+    transition: all 0.2s ease-out;
+  }
+
+  // Rotate into X with menu lines - Hamburger animation!
+  &.cross {
+    transform: rotate(180deg);
+
+    .btn-line {
+      // Line 1 - Rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      // Line 3 - Rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(6.5px, -6.5px);
+      }
+    }
+  }
+}
+
+.navbar {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  padding: 90px 60px 30px;
+  border-bottom-left-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(100%);
+  transition: all 0.2s ease-out;
+
+  @include responsive(md) {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &.show {
+    transform: translateX(0);
+  }
+
+  .navbar__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar__item {
+    margin: 10px 0;
+  }
+
+  .navbar__link {
+    border: none;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-color: $color-theme-main;
+    }
+  }
+}

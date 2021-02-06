@@ -1,0 +1,21 @@
+.skills {
+  margin-top: 2rem;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  &__item {
+    margin: 0 4px;
+
+    @include responsive(md) {
+      margin: 0 8px;
+    }
+  }
+
+  &__icon {
+    font-size: 3rem;
+  }
+}

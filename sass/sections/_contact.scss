@@ -1,0 +1,110 @@
+#contact {
+  background-image: 
+    linear-gradient(
+      to right bottom, 
+      rgba(#333, 0.2),
+      rgba(#333, 0.2)
+    ),
+    url('../assets/images/white_bg_22.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 22px;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow:  hidden;
+  padding: 1rem;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.45);
+
+  @include responsive(md) {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+  }
+
+  .form-group.message {
+    flex-direction: column;
+    justify-self: normal;
+
+    @include responsive(md) {
+      grid-column: span 2;
+    }
+  }
+
+  &__label {
+    order: 1;
+    padding: 4px;
+    border-bottom: 1px solid #555;
+    transition: all 0.2s ease-out;
+
+    &[for="submit"] {
+      align-self: start;
+      border: none;
+    }
+  }
+
+  &__input {
+    order: 2;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #555;
+    width: 100%;
+    padding: 4px;
+    box-shadow: none;
+    transition: all 0.2s ease-out;
+
+    &-textarea {
+      width: 100%;
+      border: 1px solid #555;
+      border-radius: 3px;
+      padding: 6px;
+      resize: none;
+    }
+
+    &:not(:first-child) {
+      margin-top: -1px;
+    }
+
+    &:focus {
+      border-color: $color-theme-main;
+      z-index: 1;
+
+      & ~ .contact-form__label {
+        border-color: $color-theme-main;
+      }
+    }
+  }
+
+  &__submit {
+    background-color: #333;
+    border: 2px solid transparent;;
+    border-radius: 3px;
+    border-radius: 3px;
+    max-width: 300px;
+    padding: 6px 12px;
+    transition: all 0.2s ease-out;
+    justify-self: end;
+
+    @include responsive(md) {
+      grid-column: span 2;
+    }
+
+    &:hover {
+      border-color: $color-theme-main;
+      border-color: currentColor;
+    }
+  }
+}
